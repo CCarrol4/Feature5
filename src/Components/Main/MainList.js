@@ -1,14 +1,26 @@
 import React from "react";
+import Parse from "parse";
 
-/* STATEFUL PARENT COMPONENT */
 const MainList = () => {
-  // Variables in the state to hold data
+  //LOGGING OUT IS HARD BUT HERE IT IS
+  const handleLogout = () => {
+    Parse.User.logOut()
+      .then(() => {
+        // IF logout successful
+        window.location.href = "/Auth.js"; // Go to Auth.js after successful logout
+      })
+      .catch((error) => {
+        alert(`Error: ${error.message}`); // ERROR IN CASE LOGGING OUT MESSES UP BAD
+      });
+  };
 
   return (
     <div>
-      <hr />
-      This is the main list parent component.
-      {/* Stateless Child component passing up events from form */}
+      <div>
+        Thank you for registering/logging in. You can only see this page if you
+        have done so.
+      </div>
+      <button onClick={handleLogout}>Logout</button>
     </div>
   );
 };

@@ -16,14 +16,17 @@ const AuthModule = () => {
 
   return (
     <div>
-      <Link to="/auth/register">
-        <button>Register</button>
-      </Link>
-      <br />
-      <br />
-      <Link to="/auth/login">
-        <button>Login</button>
-      </Link>
+      <h1>The Login and Register Website</h1>
+      <div>
+        <Link to="/auth/register">
+          <button>Register</button>
+        </Link>
+        <br />
+        <br />
+        <Link to="/auth/login">
+          <button>Login</button>
+        </Link>
+      </div>
     </div>
   );
 };
